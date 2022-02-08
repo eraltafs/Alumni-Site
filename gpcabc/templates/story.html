@@ -1,0 +1,92 @@
+{% include 'base.html' %}
+<title>Aluminy | Story</title>
+{% block body %}
+<div class="container-fluid px-0">
+    <h2 class=" px-0 text-center mb-1 bg-dark" style="font-family:courier; color:green;">Share Your Story</h2>
+</div>
+<div class="container-flud text-white mb-0 py-4 bg-dark">
+    <div class="container">
+        <form name="strform" action="/story" onsubmit="return validateFormstr()" method="post" required>
+            {% csrf_token %}
+            <div class="form-group mb-2">
+                <label for="name" class="required">Name </label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Please type your full name">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="passout" class="required">Passout-Year</label>
+                <input type="text" class="form-control" id="passout" name="passout" placeholder="Passout-Year">
+            </div>
+
+
+
+            <div class="form-group mb-2">
+                <label for="branch" class="required">Branch Name </label>
+                <input type="text" class="form-control" id="branch" name="branch"
+                    placeholder="Please Enter Your Branch Name">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="email" class="required">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="phone1" class="required">Mobile Number -01</label>
+                <p>Please enter Digits only (e.g. 9414137229 for INDIA, 009414137229 for Abroad)</p>
+                <input type="phone" class="form-control" id="phone1" name="phone1"
+                    placeholder="Enter Your Phone Number">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="phone2">Mobile Number-02 (if any)</label>
+                <p>Please enter Digits only (e.g. 9414137229 for INDIA, 009414137229 for Abroad)</p>
+                <input type="phone" class="form-control" id="phone2" name="phone2"
+                    placeholder="Enter Your Phone Number">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="birthday" class="required">Date of Birth:</label>
+                <p></p>
+                <input type="date" id="birthday" name="birthday">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="profession">Profession</label>
+                <input type="text" class="form-control" id="profession" name="profession"
+                    placeholder="Please type your Profession">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="address1">Address of Work Place</label>
+                <input type="text" class="form-control" id="address1" name="address1"
+                    placeholder="Please type full Address of your Work Place">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="phone3">Office Phone (if any)</label>
+                <p>Please Type Office phone number with STD Code</p>
+                <input type="phone" class="form-control" id="phone3" name="phone3"
+                    placeholder="Enter Your Phone Number">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="address2" class="required">Permanent Address</label>
+                <input type="text" class="form-control" id="address2" name="address2"
+                    placeholder="Please type full Address of your Work Place">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="desc">Any Other Information</label>
+                <textarea class="form-control" id="desc" rows="3" name="desc"
+                    placeholder='Please give any other information /suggestions'></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <p>
+                <span class="required"></span>Required Field
+            </p>
+        </form>
+    </div>
+</div>
+{% endblock body %}
+{% include 'footer.html' %}

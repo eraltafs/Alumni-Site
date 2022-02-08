@@ -1,0 +1,212 @@
+{% include 'base.html' %}
+<title>Aluminy | Registration</title>
+{% block body %}
+<div class="container-fluid px-0">
+    <h2 class="my-1 px-0 text-center bg-dark" style="font-family:courier; color:green;">Register Here
+    </h2>
+</div>
+
+
+<div class="container-flud text-white mb-0 py-4 bg-dark">
+    <div class="container">
+        <form name="regform" action="/registration" onsubmit="return validateFormreg()" method="post" required>
+            {% csrf_token %}
+            <div class="form-group mb-2">
+                <label for="name" class="required">Name </label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Please type your full name">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="passout" class="required">Passout-Year</label>
+                <input type="text" class="form-control" id="passout" name="passout" placeholder="Passout-Year">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="reciept" class="required">Reciept No. </label>
+                <p>Fee deposit receipt number (शुल्क जमा करवाने की रसीद संख्या)</p>
+                <input type="text" class="form-control" id="receipt" name="receipt" placeholder="Reciept No.">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="branch" class="required">Branch Name </label>
+                <input type="text" class="form-control" id="branch" name="branch"
+                    placeholder="Please Enter Your Branch Name">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="email" class="required">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="phone1" class="required">Mobile Number -01</label>
+                <p>Please enter Digits only (e.g. 9414137229 for INDIA, 009414137229 for Abroad)</p>
+                <input type="phone" class="form-control" id="phone1" name="phone1"
+                    placeholder="Enter Your Phone Number">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="phone2">Mobile Number-02 (if any)</label>
+                <p>Please enter Digits only (e.g. 9414137229 for INDIA, 009414137229 for Abroad)</p>
+                <input type="phone" class="form-control" id="phone2" name="phone2"
+                    placeholder="Enter Your Phone Number">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="birthday" class="required">Date of Birth:</label>
+                <p></p>
+                <input type="date" id="birthday" name="birthday">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="profession">Profession</label>
+                <input type="text" class="form-control" id="profession" name="profession"
+                    placeholder="Please type your Profession">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="address1">Address of Work Place</label>
+                <input type="text" class="form-control" id="address1" name="address1"
+                    placeholder="Please type full Address of your Work Place">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="phone3">Office Phone (if any)</label>
+                <p>Please Type Office phone number with STD Code</p>
+                <input type="phone" class="form-control" id="phone3" name="phone3"
+                    placeholder="Enter Your Phone Number">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="address2" class="required">Permanent Address</label>
+                <input type="text" class="form-control" id="address2" name="address2"
+                    placeholder="Please type full Address of your Work Place">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="desc">Any Other Information</label>
+                <textarea class="form-control" id="desc" rows="3" name="desc"
+                    placeholder='Please give any other information /suggestions'></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <p>
+                <span class="required"></span>Required Field
+            </p>
+        </form>
+    </div>
+</div>
+
+<div class="bg-dark my-1" style="font-size:13.3333px;text-align:left">
+    <div style="font-size:13.3333px;text-align:center">
+        <font size="5">
+            <b style="background-color:transparent">
+                <font color="#0000ff">11th Alumni Meet&nbsp;</font>
+                <font color="#ff0000">"पुनर्मिलन-2020"</font>
+                <font color="#0000ff">&nbsp;Registration Fees&nbsp;</font>
+            </b>
+        </font>
+    </div>
+    <div style="font-size:13.3333px;text-align:center">
+        <b>
+            <font color="#ff00ff" size="4">Alumni Passout year 2016-17 &amp; onwards:&nbsp;<span
+                    style="background-color:rgb(255,255,0)">300 Rs.</span>
+            </font>
+        </b>
+    </div>
+    <div style="font-size:13.3333px;text-align:center">
+        <b>
+            <font color="#38761d" size="4" style="background-color:transparent">Alumni Passout Year Before
+                2016-17:&nbsp;
+            </font>
+            <span style="background-color:rgb(255,255,0)">
+                <font color="#38761d" size="4">1100</font>
+                <font color="#38761d" size="4">&nbsp;Rs.</font>
+            </span>
+        </b>
+
+    </div>
+</div>
+
+<div class="bg-dark py-2 text-white" style="text-align:center">
+    <div style="font-size:13.3333px;text-align:left">
+        <font color="#0000ff"><b style="background-color:transparent">
+                <font class="text-white" size="4">Registration fees can be deposited &nbsp;via</font>
+            </b></font>
+    </div>
+    <div style="font-size:13.3333px;text-align:left"><b style="background-color:transparent;font-size:10pt">
+            <font color="#ff00ff" size="4">1.</font>
+            <font color="#0000ff" size="4">&nbsp;</font>
+            <font color="#ff00ff" size="4">Net Banking using below bank details</font>
+        </b>
+    </div>
+    <div style="font-size:13.3333px;text-align:left"><b style="background-color:transparent;font-size:10pt">
+            <font color="#274e13" size="4">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;</font>
+        </b><b style="background-color:transparent;font-size:10pt">
+            <font size="4">Name of Bank A/c :&nbsp;<font color="#ff0000">Alumni Polytechnic College Society Bikaner
+                </font>
+            </font>
+        </b>
+    </div>
+    <div style="font-size:13.3333px;text-align:start">
+        <div><b style="background-color:transparent;font-size:10pt">
+                <font size="4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Bank&nbsp; A/C No:<font color="#0000ff">
+                        &nbsp;
+                    </font><span style="background-color:transparent">
+                        <font color="#ff0000">35755198117&nbsp;</font>
+                    </span></font>
+            </b></div>
+        <div>
+            <font size="4"><b>
+                    <font color="#9900ff">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;IFSC Code</font>
+                    <font color="#ff0000">&nbsp;</font>
+                    <font color="#0000ff">:&nbsp;</font>
+                    <font color="#ff0000">SBIN0007260</font>
+                </b></font>
+        </div>
+    </div>
+    <div style="font-size:13.3333px;text-align:left">
+        <b style="background-color:transparent;font-size:10pt">
+            <font color="#ff00ff" size="4">2.</font>
+            <font color="#0000ff" size="4">&nbsp;</font>
+            <font color="#ff00ff" size="4">UPI (Unified Payment Interface )</font>
+        </b><b style="background-color:transparent;font-size:13.3333px">
+            <font color="#0000ff" size="4">&nbsp;</font>
+        </b>
+    </div>
+    <div class="bg-dark py-2" style="text-align:center">
+        <img src="/static/img/upipay.png" class="img-fluid rounded" alt="Responsive image" border="0" height="250"
+            width="200">
+    </div>
+    <div style="text-align:left"><b style="font-size:10pt;background-color:transparent">
+            <b style="background-color:transparent;font-size:10pt">
+                <div style="display:inline!important">
+                    <b style="background-color:transparent;font-size:10pt">
+                        <div style="display:inline!important">
+                            <b style="background-color:transparent;font-size:10pt">
+                                <div style="display:inline!important">
+                                    <b style="background-color:transparent">
+                                        <font color="#ff0000" size="3">Note:-</font>
+                                    </b>
+                                    <b style="background-color:transparent;font-size:10pt">
+                                        <div style="display:inline!important">
+                                            <b style="background-color:transparent">
+                                                <font color="#ff0000" size="3">Please also send the receipt with your
+                                                    name, batch to&nbsp;</font>
+                                                <font class="text-white" size="3"><a
+                                                        href="mailto: gpcbalumni@gmail.com?subject=Reciept"
+                                                        target="_blank">gpcbalumni@gmail.com</a></font>
+                                            </b>
+                                        </div>
+                                    </b>
+                                </div>
+                            </b>
+                        </div>
+                    </b>
+                </div>
+            </b>
+        </b>
+    </div>
+</div>
+
+{% endblock body %}
+{% include 'footer.html' %}

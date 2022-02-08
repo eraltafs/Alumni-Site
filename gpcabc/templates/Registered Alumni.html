@@ -1,0 +1,104 @@
+{% include 'base.html' %}
+<title>Aluminy | Registered</title>
+{% block body %}
+<div class="container-fluid px-0">
+
+    <h2 class="my-0 px-0 text-center mb-1 bg-dark" style="font-family:courier; color:green;">Registered Aluminy</h2>
+</div>
+
+
+
+<div class="my-1 px-0 py-2 text-center bg-dark">
+    <div style="text-align:center">
+        <b style="background-color:transparent;font-size:10pt">
+            <font color="#ff00ff" size="3">Motivate Your&nbsp;Batch-mates/Acquaintances&nbsp;&nbsp;for registration or
+                share
+                us there contact numbers we will contact them</font>
+        </b>
+    </div>
+
+
+
+    <div style="text-align:center">
+        <div class="text-white" style="text-align:center;display:block">
+            <a href="https://sites.google.com/site/gpcbalumni/registered-alumni/cell3%20-%20Copy.jpg?attredirects=0"
+                imageanchor="1"><img alt="Mobile No." border="0" src="/static/img/phone logo.jpg"></a>&nbsp;&nbsp;&nbsp;
+            <b>
+                <span style="text-align:center;font-size:12pt;background-color:transparent">Mr. Anurag
+                    Nagar:094143-00373</span>
+                <span
+                    style="text-align:center;font-size:12pt;line-height:115%;background-color:transparent">&nbsp;&nbsp;
+                    &nbsp; &nbsp; &nbsp;&nbsp;</span>
+                <span
+                    style="text-align:center;font-size:12pt;line-height:115%;background-color:transparent">&nbsp;&nbsp;</span>
+                <span style="text-align:center;font-size:12pt;line-height:115%;background-color:transparent">Mr.
+                    Prashant Joshi: 080037-81633</span>
+            </b>
+        </div>
+    </div>
+</div>
+<div class="my-1 px-2 text-white bg-dark" style='overflow-x:auto;'>
+    <div class="container text-center py-2 searchboxreg">
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+    </div>
+
+    <table border="1" class="px-1 " bordercolor="#888" cellspacing="0"
+        style="border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px; width:100%;">
+        <thead border="1" bordercolor="#888" cellspacing="0"
+            style="border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px">
+            <tr>
+                <th border="1" bordercolor="#888" cellspacing="0"
+                    style="text-align: center; border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px">
+                    Id</th>
+                <th border="1" bordercolor="#888" cellspacing="0"
+                    style="text-align: center; border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px">
+                    Name</th>
+                <th border="1" bordercolor="#888" cellspacing="0"
+                    style="text-align: center; border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px"
+                    class="px-2">Branch</th>
+                <th border="1" bordercolor="#888" cellspacing="0"
+                    style="text-align: center; border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px"
+                    class="px-2">Passout</th>
+                <th border="1" bordercolor="#888" cellspacing="0"
+                    style="text-align: center; border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px">
+                    Email</th>
+                <th border="1" bordercolor="#888" cellspacing="0"
+                    style="text-align: center; border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px">
+                    Address of work</th>
+                <th border="1" bordercolor="#888" cellspacing="0"
+                    style="text-align: center; border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px">
+                    Permanent address</th>
+            </tr>
+        </thead>
+        <tbody id="myTable" border="1" bordercolor="#888" cellspacing="0"
+            style="border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px">
+            {% for registered in registered_list %}
+            <tr border="1" bordercolor="#888" cellspacing="0"
+                style="border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px">
+                <td border="1" bordercolor="#888" cellspacing="0"
+                    style="text-align: center; border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px">
+                    {{registered.id}}
+                </td>
+                <td>{{registered.name}}</td>
+                <td border="1" bordercolor="#888" cellspacing="0"
+                    style="text-align: center; border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px">
+                    {{registered.branch}}</td>
+                <td style="text-align: center;">{{registered.passout}}</td>
+                <td border="1" bordercolor="#888" cellspacing="0"
+                    style="border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px">{{registered.email}}
+                </td>
+                <td>{{registered.address_work}}</td>
+                <td border="1" bordercolor="#888" cellspacing="0"
+                    style="border-collapse:collapse;border-color:rgb(19, 255, 11);border-width:1px">
+                    {{registered.permanent_address}}</td>
+            </tr>
+
+
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock body %}
+{% include 'footer.html' %}

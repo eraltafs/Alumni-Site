@@ -1,0 +1,58 @@
+{% include 'base.html' %}
+<title>Aluminy | Contact</title>
+{% block body %}
+<div class="container-fluid px-0">
+    <h2 class="text-center bg-dark mb-1" style="font-family:courier; color:green;">Contact-Us</h2>
+</div>
+
+
+<div class="container-flud text-white mb-1 py-1 bg-dark">
+    <div class="container">
+        <div style="text-align:center">
+            <font size="3">
+                <font color="#0000ff">
+                    <b>
+                        <br>
+                    </b>
+                </font>
+            </font>
+        </div>
+        <form name="conform" action="/contact" onsubmit="return validateFormcon()" method="post" required>
+            {% csrf_token %}
+            <div class="form-group mb-2">
+                <label for="name" class="required">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="email" class="required">Email address</label>
+                <input type="email" class="form-control my" id="email" name="email" placeholder="Enter Your Email">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="phone" class="required">Phone Number</label>
+                <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+            </div>
+
+            <div class="form-group mb-2">
+                <label for="desc">Tell me about what you want to contact me for...</label>
+                <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+            </div>
+            <button class="btn btn-primary my-1" type="submit">Submit</button>
+        </form>
+        <div style="text-align:center">
+            <font size="3">
+                <font color="#0000ff">
+                    <b>
+                        <br>
+                    </b>
+                </font>
+            </font>
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock body %}
+{% include 'footer.html' %}
